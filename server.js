@@ -2,7 +2,6 @@ import express from "express";
 import { fetch } from "undici";
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 // 🔒 your Steam vanity ID
 const CUSTOM_ID = "PRIX0N";
@@ -299,6 +298,11 @@ app.get("/steam-status.svg", async (req, res) => {
   }
 });
 
+// all your route code goes here...
+
+// only one PORT line — at the bottom!
+const PORT = process.env.PORT || 1000;
+
 app.listen(PORT, () => {
-  console.log("✅ Server running at http://localhost:" + PORT);
+  console.log(`Server running on port ${PORT}`);
 });
